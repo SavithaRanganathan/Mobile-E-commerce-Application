@@ -1,0 +1,57 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @model.name %>
+</p>
+
+<p>
+  <strong>Description</strong>
+  <%= @model.description %>
+</p>
+<p>
+  <strong>Selling Price</strong>
+  <%= @model.selling_price %>
+</p>
+<p>
+  <strong>Year of release</strong>
+  <%= @model.year_of_release %>
+</p>
+<p>
+  <strong>USB Type</strong>
+  <%= @model.usb_type %>
+</p>
+<p>
+  <strong>Battery Capacity</strong>
+  <%= @model.battery_capacity %>
+</p>
+<p>
+  <strong>sim_type</strong>
+  <%= @model.sim_type %>
+</p>
+<p>
+  <strong>colour</strong>
+  <%= @model.colour %>
+</p>
+<p>
+  <strong>network_supported</strong>
+  <%= @model.network_supported %>
+</p>
+<p>
+  <strong>manufacturers</strong>
+  <%= collection_select(@model,:manufacturer_id,Manufacturer.all,:id,:name)%>
+</p>
+<p>
+  <strong>storage</strong>
+  <%= collection_select(@model,:storage_id,Storage.all,:id,:storage_specfications ) %>
+</p>
+<p>
+  <strong>Prcessoe</strong>
+  <%= collection_select(@model,:processor_id,Processor.all,:id,:processor_specfications)%>
+</p>
+<p>
+  <strong>operating_system</strong>
+  <%= collection_select(@model,:operating_system_id,OperatingSystem.all,:id,:os_specfications)%>
+</p>
+<%= link_to 'Edit', edit_model_path(@model) %> |
+<%= link_to 'Back', models_path %>

@@ -1,0 +1,218 @@
+
+<%= form_for(@model, local: true)  do |f| %>
+  <% if @model.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@model.errors.count, "error") %> prohibited this model from being saved:</h2>
+
+      <ul>
+      <% @model.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<table class="center">
+  <tr>
+  <div class="field">
+   <td> <%= f.label :name %></t></td>
+   <td> <%= f.text_field :name %></td>
+  </div>
+</tr>
+<tr>
+  <div class="field">
+    <td><%= f.label :description %></t></td>
+    <td><%= f.text_area :description %></td>
+  </div>
+</tr>
+<tr>
+  <div class="field">
+  <td>  <%= f.label :selling_price %></t></td>
+   <td> <%= f.text_field :selling_price %></td>
+  </div>
+</tr>
+<tr>
+    <div class="field">
+    <td><%= f.label :year_of_release %></t></td>
+    <td><%= f.text_field :year_of_release %></td>
+  </div>
+</tr>
+<tr>
+    <div class="field">
+   <td> <%= f.label :usb_type %></t></td>
+  <td>  <%= f.text_field :usb_type %></td>
+  </div>
+</tr>
+<tr>
+    <div class="field">
+    <td><%= f.label :battery_capacity %></t></td>
+    <td><%= f.text_field :battery_capacity %></td>
+  </div>
+</tr>
+<tr>
+    <div class="field">
+    <td><%= f.label :height %></t></td>
+    <td><%= f.text_field :height %></td>
+  </div>
+</tr>
+<tr>
+    <div class="field">
+    <td><%= f.label :width %></t></td>
+    <td><%= f.text_field :width %></td>
+  </div>
+</tr>
+<tr>
+    <div class="field">
+    <td><%= f.label :sim_type %></t></td>
+    <td><%= f.text_field :sim_type %></td>
+  </div>
+</tr>
+<tr>
+  </div>
+    <div class="field">
+    <td><%= f.label :colour %></t></td>
+    <td><%= f.text_field :colour %></td>
+  </div>
+</tr>
+<tr>
+   </div>
+    <div class="field">
+    <td><%= f.label :network_supported %></t></td>
+    <td><%= f.text_field :network_supported %></td>
+  </div>
+</tr>
+<tr>
+  <div class="field">
+    <td><%= f.label :manufacturer %></td>
+    <td><%= f.collection_select :manufacturer_id,Manufacturer.all,:id,:name%>
+<div class="field" onclick="showInputBox()">
+    <%= f.label "Add New Manufacturer" %>
+    <div class="add_manufacturer" id="addManufacturer" >
+      
+      <%= f.fields_for :manufacturers do |m| %>
+      <%= m.label :name %>
+      <%= m.text_field :name %>
+      <%= m.label :year_of_establishment %>
+      <%= m.text_field :year_of_establishment %><br>
+      <%= m.label :parent_company %>
+      <%= m.text_field :parent_company %>
+      
+    <% end %>
+    </div> </td>
+  </div>
+  </div><br>
+</tr>
+<tr>
+   <div class="field">
+   <td> <%= f.label :storage %></td>
+   <td> <%= f.collection_select :storage_id,Storage.all,:id,:storage_specfications %>
+    <div class="field" onclick="showStorageInputBox()">
+    <%= f.label "Add New Storage" %>
+    <div class="add_storage" id="addStorage" >
+      
+      <%= f.fields_for :storage do |s| %>
+      <%= s.label :RAM %>
+      <%= s.text_field :primary %>
+      <%= s.label :ROM %>
+      <%= s.text_field :secondary %>
+      <%= s.label :Extended %>
+      <%= s.text_field :extended %>
+      <%= s.label :Memory_card %>
+      <%= s.text_field :memory_card %>
+      
+    <% end %></td>
+    </div> 
+  </div>
+  </div>
+</tr>
+<tr>
+  <td><div class="field">
+    <%= f.label :operating_system %></td>
+   <td> <%= f.collection_select :operating_system_id,OperatingSystem.all,:id,:os_specfications %>
+    <div class="field" onclick="showOSInputBox()">
+    <%= f.label "Add New OS" %>
+    <div class="add_operating_system" id="addOperatingSystem" >
+      
+      <%= f.fields_for :operating_system do |os| %>
+      <%= os.label :name %>
+      <%= os.text_field :name %>
+      <%= os.label :version %>
+      <%= os.text_field :version %>
+      <%= os.label :company %>
+      <%= os.text_field :company %>
+      
+    <% end %>
+    </div> </td>
+  </div>
+  </div>
+</tr>
+<tr>
+  <div class="field">
+    <td><%= f.label :processor %></td>
+    <td><%= f.collection_select :processor_id,Processor.all,:id,:processor_specfications %>
+    <div class="field" onclick="showProcessorInputBox()">
+    <%= f.label "Add New Processor" %>
+    <div class="add_processor" id="add" >
+      
+      <%= f.fields_for :processor do |processor| %>
+      <%= processor.label :name %>
+      <%= processor.text_field :name %>
+      <%= processor.label :company %>
+      <%= processor.text_field :company %>
+      <%= processor.label :speed %>
+      <%= processor.text_field :speed %>
+      
+    <% end %>
+    </div> </td>
+  </div>
+  </div>
+</tr>
+<tr>
+<td>   <div class="field">
+    <%= f.label :camera %>
+  </div></td>
+  <td>  <div class="add_camera" id="AddCamera" >
+      
+      <%= f.fields_for :camera do |c| %>
+      <%= c.label :type %>
+      <%= c.text_field :type %>
+      <%= c.label :postion %>
+      <%= c.text_field :postion %>
+      <%= c.label :pixel %>
+      <%= c.text_field :pixel %>
+      
+    <% end %>
+    </div> 
+  </td>
+   </tr>
+<tr>
+  <td><div class="actions">
+    <%= f.submit %>
+  </div></td>
+</tr>
+</table>
+<% end %>
+
+
+
+<p>Find me in app/views/models/new.html.erb</p>
+<script type="text/javascript">
+ $(document).ready(function(){
+     $('.add_manufacturer').hide()
+     $('.add_storage').hide()
+     $('.add_operating_system').hide()
+     $('.add_processor').hide()
+ })
+function showInputBox(){
+  $(".add_manufacturer").show()
+}
+function showStorageInputBox(){
+  $(".add_storage").show()
+}
+function showOSInputBox(){
+  $('.add_operating_system').show()
+}
+function showProcessorInputBox(){
+   $('.add_processor').show()
+}
+
+</script>

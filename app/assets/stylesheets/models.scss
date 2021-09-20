@@ -1,0 +1,15 @@
+// Place all the styles related to the models controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+div {
+  &.field, &.actions {
+    margin-bottom: 10px;
+  }
+}
+
+.center {
+  margin-left: auto;
+  margin-right: auto;
+}
+

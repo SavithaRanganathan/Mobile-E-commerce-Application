@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  description: MyText
+  selling_price: 1
+  year_of_release: 1
+  t.string: MyString
+  : 
+  battery_capacity: 1
+  height: 1
+  width: 1
+  sim_type: MyString
+  colour: MyString
+  network_supported: MyString
+
+two:
+  name: MyString
+  description: MyText
+  selling_price: 1
+  year_of_release: 1
+  t.string: MyString
+  : 
+  battery_capacity: 1
+  height: 1
+  width: 1
+  sim_type: MyString
+  colour: MyString
+  network_supported: MyString

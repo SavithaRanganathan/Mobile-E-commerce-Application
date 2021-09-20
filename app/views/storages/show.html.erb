@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>RAM:</strong>
+  <%= @storage.primary %>
+</p>
+
+<p>
+  <strong>ROM:</strong>
+  <%= @storage.secondary %>
+</p>
+
+<p>
+  <strong>Extended:</strong>
+  <%= @storage.extended %>
+</p>
+
+<p>
+  <strong>Memory card:</strong>
+  <%= @storage.memory_card %>
+</p>
+
+<%= link_to 'Edit', edit_storage_path(@storage) %> |
+<%= link_to 'Back', storages_path %>

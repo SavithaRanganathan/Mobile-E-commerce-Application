@@ -1,0 +1,1 @@
+Sample rails application for second hand mobile sales shop.

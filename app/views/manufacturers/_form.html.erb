@@ -1,0 +1,30 @@
+<%= form_for(@manufacturer) do |f| %>
+  <% if @manufacturer.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@manufacturer.errors.count, "error") %> prohibited this manufacturer from being saved:</h2>
+
+      <ul>
+      <% @manufacturer.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :year_of_establishment %><br>
+    <%= f.text_field :year_of_establishment %>
+  </div>
+  <div class="field">
+    <%= f.label :parent_company %><br>
+    <%= f.text_field :parent_company %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+

@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @manufacturer.name %>
+</p>
+
+<p>
+  <strong>Year of establishment:</strong>
+  <%= @manufacturer.year_of_establishment %>
+</p>
+
+<p>
+  <strong>Parent company:</strong>
+  <%= @manufacturer.parent_company %>
+</p>
+
+<%= link_to 'Edit', edit_manufacturer_path(@manufacturer) %> |
+<%= link_to 'Back', manufacturers_path %>
